@@ -16,7 +16,6 @@ class MenuItem {
     }
 }
 class Pizza extends MenuItem {
-    ;
     constructor(title, price) {
         super(title, price);
         this.base = "classic";
@@ -39,7 +38,7 @@ class Pizza extends MenuItem {
     }
     format() {
         let fotmatted = this.details + "\n";
-        //base 
+        //base
         fotmatted += `pizza on a ${this.base} base.\n`;
         //toppings
         if (this.toppings.length) {

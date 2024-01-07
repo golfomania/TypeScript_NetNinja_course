@@ -6,7 +6,7 @@ interface HasFormatter {
   format(): string;
 }
 
-abstract class MenuItem implements HasFormatter{
+abstract class MenuItem implements HasFormatter {
   constructor(private title: string, private price: number) {}
 
   get getTitle(): string {
@@ -21,13 +21,13 @@ abstract class MenuItem implements HasFormatter{
     return `${this.title} - €${this.price}`;
   }
 
-  abstract format(): string 
+  abstract format(): string;
 }
 
 class Pizza extends MenuItem {
   private base: Base = "classic";
-  private toppings: string[] = []‚;
-  
+  private toppings: string[] = [];
+
   constructor(title: string, price: number) {
     super(title, price);
   }
@@ -55,7 +55,7 @@ class Pizza extends MenuItem {
   format(): string {
     let fotmatted = this.details + "\n";
 
-    //base 
+    //base
     fotmatted += `pizza on a ${this.base} base.\n`;
 
     //toppings
@@ -73,10 +73,8 @@ const pizzaM = new Pizza("Margaritha", 10);
 pizzaM.addTopping("cheese");
 const pizzaF = new Pizza("Funghi", 12);
 
-
-function printFormatted(elem : HasFormatter): void {
+function printFormatted(elem: HasFormatter): void {
   console.log(elem.format());
 }
 
 printFormatted(pizzaM);
-
